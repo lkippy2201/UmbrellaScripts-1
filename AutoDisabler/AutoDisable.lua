@@ -230,13 +230,13 @@ function AutoDisable.OnUpdate()
 									
 									if k1 == Enum.AbilityBehavior.DOTA_ABILITY_BEHAVIOR_NO_TARGET then
 										Ability.CastNoTarget(j[1], false)
-										return 0
+										return 
 									elseif k1 == Enum.AbilityBehavior.DOTA_ABILITY_BEHAVIOR_POINT then
 										Ability.CastPosition(j[1], Entity.GetAbsOrigin(v), false)
-										return 0
+										return 
 									elseif k1 == Enum.AbilityBehavior.DOTA_ABILITY_BEHAVIOR_UNIT_TARGET or k1 == 33554440 then
 										Ability.CastTarget(j[1], v, false)
-										return 0
+										return 
 									end									
 									
 									

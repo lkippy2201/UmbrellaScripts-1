@@ -10,7 +10,7 @@ function ItemsHelper.ResetVars()
 end
 
 function ItemsHelper.CheckBlink(p1, p2, p3)
-	if p1 ~= (nil or 0) and Ability.GetName(p1) == 'item_blink' then
+	if p1 ~= (nil and 0) and Ability.GetName(p1) == 'item_blink' then
 		local k1 = Entity.GetAbsOrigin(p3)
 		local k2 = Vector(p2:GetX() - k1:GetX(), p2:GetY() - k1:GetY(), p2:GetZ() - k1:GetZ())
 		local k3 = math.sqrt(math.pow(k2:GetX(), 2) + math.pow(k2:GetY(), 2) + math.pow(k2:GetZ(), 2))
