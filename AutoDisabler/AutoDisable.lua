@@ -174,6 +174,14 @@ function AutoDisable.GetFAbil()
 	AutoDisable.Both = p1
 end
 
+function AutoDisable.CheckCustom(p1)
+	if p1 == 33554440 or p1 == 134217864 then
+		return true
+	else
+		return false
+	end
+end
+
 function AutoDisable.OnUpdate()
 	AutoDisable.LocalHero = Heroes.GetLocal()
 	if AutoDisable.LocalHero == nil or Menu.IsEnabled(AutoDisable.MEnabled) ~= true then return end
@@ -192,15 +200,17 @@ function AutoDisable.OnUpdate()
 					for h,j in pairs(AutoDisable.Both) do	
 						local l1 = Ability.GetCastRange(j[1])
 						local l2 = Ability.GetRange(j[1])
+						
 						if l1 == 0 then l0 = l2 else l0 = l1 end
 						if NPC.IsVisible(v.entity) and NPC.IsEntityInRange(AutoDisable.LocalHero, v.entity, l0) then
+							
 							local k1 = Ability.GetBehavior(j[1])
-
+						Log.Write(tostring(k1))
 							if k1 == Enum.AbilityBehavior.DOTA_ABILITY_BEHAVIOR_NO_TARGET then
 								Ability.CastNoTarget(j[1], false)
 							elseif k1 == Enum.AbilityBehavior.DOTA_ABILITY_BEHAVIOR_POINT then
 								Ability.CastPosition(j[1], Entity.GetAbsOrigin(v.entity), false)
-							elseif k1 == Enum.AbilityBehavior.DOTA_ABILITY_BEHAVIOR_UNIT_TARGET or k1 == 33554440 then
+							elseif k1 == Enum.AbilityBehavior.DOTA_ABILITY_BEHAVIOR_UNIT_TARGET or AutoDisable.CheckCustom(k1) then
 								Ability.CastTarget(j[1], v.entity, false) 
 							end
 							
@@ -238,7 +248,7 @@ function AutoDisable.OnUpdate()
 									elseif k1 == Enum.AbilityBehavior.DOTA_ABILITY_BEHAVIOR_POINT then
 										Ability.CastPosition(j[1], Entity.GetAbsOrigin(v), false)
 										return 
-									elseif k1 == Enum.AbilityBehavior.DOTA_ABILITY_BEHAVIOR_UNIT_TARGET or k1 == 33554440 then
+									elseif k1 == Enum.AbilityBehavior.DOTA_ABILITY_BEHAVIOR_UNIT_TARGET or AutoDisable.CheckCustom(k1) then
 										Ability.CastTarget(j[1], v, false)
 										return 
 									end									
