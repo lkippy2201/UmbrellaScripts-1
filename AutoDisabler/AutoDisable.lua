@@ -13,6 +13,7 @@ local AutoDisable = {}
 -- Pudge - pudge_meathook_impact
 -- Baratrum - spirit_breaker_charge_start
 -- Check Talents Lion
+-- Furion Teleport end
 --
 -- /Todo list --
 
@@ -67,7 +68,10 @@ AutoDisable.DangerSkills = {
 	{"npc_dota_hero_slardar", "slardar_slithereen_crush"},
 	{"npc_dota_hero_queenofpain", "queenofpain_sonic_wave"},
 	{"npc_dota_hero_centaur", "centaur_hoof_stomp"},
-	{"npc_dota_hero_sven", "sven_storm_bolt"}
+	{"npc_dota_hero_sven", "sven_storm_bolt"},
+	{"npc_dota_hero_bane", "bane_fiends_grip"},
+	{"npc_dota_hero_pudge", "pudge_dismember"},
+	{"npc_dota_hero_crystal_maiden", "crystal_maiden_freezing_field"}
 }
 
 function AutoDisable.InsertParticle(p1)
