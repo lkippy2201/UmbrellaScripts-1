@@ -217,10 +217,10 @@ function AutoDisable.OnUpdate()
 							table.remove(DangerParticleList, _)
 							return 0
 						end	
-					end
-							table.remove(DangerParticleList, _)
-							return 0
+					end	
 				end
+				table.remove(DangerParticleList, _)
+				return 0
 			end
 		end
 	end
