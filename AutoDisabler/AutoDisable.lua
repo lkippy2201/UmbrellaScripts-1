@@ -17,7 +17,6 @@ local AutoDisable = {}
 --
 -- /Todo list --
 
-
 AutoDisable.MenuPath = {"Utility", "Auto Disabler"}
 AutoDisable.MEnabled = Menu.AddOptionBool(AutoDisable.MenuPath, "Enabled", false)
 
