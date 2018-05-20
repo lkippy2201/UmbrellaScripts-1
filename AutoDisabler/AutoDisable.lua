@@ -179,6 +179,7 @@ function AutoDisable.OnUpdate()
 	AutoDisable.GetFAbil()
 	
 	AutoDisable.UpdateParticle()
+	
 	-- Партиклы --
 	if #DangerParticleList > 0 then
 		for _,v in pairs(DangerParticleList) do
@@ -195,7 +196,7 @@ function AutoDisable.OnUpdate()
 								Ability.CastNoTarget(j[1], false)
 							elseif k1 == Enum.AbilityBehavior.DOTA_ABILITY_BEHAVIOR_POINT then
 								Ability.CastPosition(j[1], Entity.GetAbsOrigin(v.entity), false)
-							elseif k1 == Enum.AbilityBehavior.DOTA_ABILITY_BEHAVIOR_UNIT_TARGET then
+							elseif k1 == Enum.AbilityBehavior.DOTA_ABILITY_BEHAVIOR_UNIT_TARGET or k1 == 33554440 then
 								Ability.CastTarget(j[1], v.entity, false) 
 							end
 							
@@ -226,16 +227,19 @@ function AutoDisable.OnUpdate()
 								if l1 == 0 then l0 = l2 else l0 = l1 end
 								if NPC.IsEntityInRange(AutoDisable.LocalHero, v, l0) and p2 > j[2] then
 									local k1 = Ability.GetBehavior(j[1])
-
+									
 									if k1 == Enum.AbilityBehavior.DOTA_ABILITY_BEHAVIOR_NO_TARGET then
 										Ability.CastNoTarget(j[1], false)
+										return 0
 									elseif k1 == Enum.AbilityBehavior.DOTA_ABILITY_BEHAVIOR_POINT then
 										Ability.CastPosition(j[1], Entity.GetAbsOrigin(v), false)
-									elseif k1 == Enum.AbilityBehavior.DOTA_ABILITY_BEHAVIOR_UNIT_TARGET then
+										return 0
+									elseif k1 == Enum.AbilityBehavior.DOTA_ABILITY_BEHAVIOR_UNIT_TARGET or k1 == 33554440 then
 										Ability.CastTarget(j[1], v, false)
-									end								
+										return 0
+									end									
 									
-									return 0
+									
 								end
 							end
 						end
