@@ -15,6 +15,10 @@ local AutoDisable = {}
 -- Check Talents Lion
 --
 -- /Todo list --
+
+AutoDisable.MenuPath = {"Utility", "Auto Disabler"}
+AutoDisable.MEnabled = Menu.AddOptionBool(AutoDisable.MenuPath, "Enabled", false)
+
 AutoDisable.LocalHero = nil
 AutoDisable.Items = {}
 AutoDisable.Abilities = {}
@@ -168,7 +172,7 @@ end
 
 function AutoDisable.OnUpdate()
 	AutoDisable.LocalHero = Heroes.GetLocal()
-	if AutoDisable.LocalHero == nil then return end
+	if AutoDisable.LocalHero == nil or Menu.IsEnabled(AutoDisable.MEnabled) ~= true then return end
 	
 	AutoDisable.GetItems()
 	AutoDisable.GetAbilities()
