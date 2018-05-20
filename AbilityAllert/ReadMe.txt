@@ -1,5 +1,5 @@
-Архив images.zip распаковать в папку с Umbrella.exe, чтобы получилось <путь до Umbrella.exe>/images/CustomUI/ и так далее
-Папка settings и файл AbilityAlert.lua должны находиться в папке scripts
+РђСЂС…РёРІ images.zip СЂР°СЃРїР°РєРѕРІР°С‚СЊ РІ РїР°РїРєСѓ СЃ Umbrella.exe, С‡С‚РѕР±С‹ РїРѕР»СѓС‡РёР»РѕСЃСЊ <РїСѓС‚СЊ РґРѕ Umbrella.exe>/images/CustomUI/ Рё С‚Р°Рє РґР°Р»РµРµ
+РџР°РїРєР° settings Рё С„Р°Р№Р» AbilityAlert.lua РґРѕР»Р¶РЅС‹ РЅР°С…РѕРґРёС‚СЊСЃСЏ РІ РїР°РїРєРµ scripts
 
 
 Extract images.zipunzip to a folder with Umbrella.exe
