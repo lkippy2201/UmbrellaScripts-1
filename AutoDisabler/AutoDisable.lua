@@ -205,7 +205,7 @@ function AutoDisable.OnUpdate()
 						if NPC.IsVisible(v.entity) and NPC.IsEntityInRange(AutoDisable.LocalHero, v.entity, l0) then
 							
 							local k1 = Ability.GetBehavior(j[1])
-						Log.Write(tostring(k1))
+
 							if k1 == Enum.AbilityBehavior.DOTA_ABILITY_BEHAVIOR_NO_TARGET then
 								Ability.CastNoTarget(j[1], false)
 							elseif k1 == Enum.AbilityBehavior.DOTA_ABILITY_BEHAVIOR_POINT then
